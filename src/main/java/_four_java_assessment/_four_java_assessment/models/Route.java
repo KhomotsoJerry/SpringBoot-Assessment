@@ -11,16 +11,22 @@ import lombok.Setter;
 @Setter
 @Getter
 @Entity
-@Table(name="_route")
+@Table(name="_route" ,
+        uniqueConstraints = {
+        @UniqueConstraint(name = "unique-route" , columnNames = "source")
+        }
+)
 public class Route {
     @Id
     @GeneratedValue(generator ="router-sequence",strategy = GenerationType.IDENTITY)
     private Long id;
     @ManyToOne
     @JoinColumn(name = "source_id",referencedColumnName = "name")
+    @Column(nullable = false)
     private Node_A source;
     @ManyToOne
     @JoinColumn(name = "goal_id",referencedColumnName = "name")
+    @Column(nullable = false)
     private Node_A goal;
     private double distance;
 }
