@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Tue Jul 30 16:58:40 SAST 2024:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.16.1.1 - (1901046): instance a816c00e-0191-0426-7230-000001483fa0 
+on database directory memory:C:\Users\phillip\Downloads\27four-java-assessment\27four-java-assessment\under_dev_database with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@76ed5528 
+Loaded from file:/C:/Users/phillip/.m2/repository/org/apache/derby/derby/10.16.1.1/derby-10.16.1.1.jar
+java.vendor=Oracle Corporation
+java.runtime.version=20+36-2344
+user.dir=C:\Users\phillip\Downloads\27four-java-assessment\27four-java-assessment
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
