@@ -1,4 +1,4 @@
-source,goal,distance
+source,destination,distance
 Earth,Mars,240
 Mars,venus,255
 Mars,Jupiter,877

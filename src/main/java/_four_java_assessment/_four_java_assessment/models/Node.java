@@ -1,6 +1,5 @@
 package _four_java_assessment._four_java_assessment.models;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,15 +9,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Setter
 @Getter
-@Entity
-@Table(name="_route")
-public class Route {
-    @Id
-    @GeneratedValue(generator ="router-sequence",strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String source;
-    private String destination;
+public class Node {
+    private String name;
     private double distance;
-
-
 }

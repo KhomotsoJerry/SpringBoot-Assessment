@@ -41,14 +41,14 @@ public class DataService {
                     if (line.trim().isEmpty() || line.startsWith("source")){
                         continue;
                     }
-                    StringBuilder sb =new StringBuilder(line);
-                    int oneIComma = sb.indexOf(",");
-                    int endIComma = sb.lastIndexOf(",");
-
-                    String source =sb.substring(0,oneIComma).trim();
-                    String goal = sb.substring(oneIComma+1,endIComma).trim();
-                    double diff = Double.parseDouble(sb.substring(endIComma+1).trim());
-
+                    String[] places = line.split(",");
+                    if (places.length != 3){
+                        System.out.println("invalid line format: "+line);
+                        continue;
+                    }
+                   String source = places[0].trim();
+                    String goal =places[1].trim();
+                    double distance = Double.parseDouble(places[2].trim());
                     if(!nodes.contains(source)){
                         nodeRepository.save(new Node_A(source));
                         nodes.add(source);
@@ -59,9 +59,9 @@ public class DataService {
                     }
                     // adding route
                     Route route = new Route();
-                    route.setSource(nodeRepository.findById(source).orElse(null));
-                    route.setGoal(nodeRepository.findById(goal).orElse(null));
-                    route.setDistance(diff);
+                    route.setSource(source);
+                    route.setDestination(goal);
+                    route.setDistance(distance);
                     routeRepository.save(route);
                 }
              } catch (Exception e) {
